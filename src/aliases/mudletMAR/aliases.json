@@ -1,0 +1,7 @@
+[
+  {
+    "name": "MAR debug",
+    "regex": "^MAR debug$",
+    "script": "MAR.toggleDebug()"
+  }
+]
