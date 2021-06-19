@@ -1,0 +1,25 @@
+name: muddler-build
+
+on:
+  push: 
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Build With Muddler
+        uses: demonnic/build-with-muddler@v1.2
+
+      - name: Upload MPackage
+        uses: actions/upload-artifact@v2
+        with:
+          name: mudletMAR
+          path: build/tmp/
